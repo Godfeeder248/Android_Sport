@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_match"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rinaattieh.android_sport_projet.NewMatch">
+
+    <TextView
+        android:text="Equipe 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/teamA" />
+
+    <TextView
+        android:text="Equipe 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teamA"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/teamB" />
+
+    <TextView
+        android:text="Service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/service"
+        android:layout_below="@+id/teamB"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary" />
+
+    <Button
+        android:text="Limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/time_out"
+        android:layout_alignLeft="@+id/ace"
+        android:layout_alignStart="@+id/ace"
+        android:id="@+id/limit" />
+
+    <Button
+        android:text="Out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/limit"
+        android:layout_alignRight="@+id/filet"
+        android:layout_alignEnd="@+id/filet"
+        android:id="@+id/out" />
+
+    <TextView
+        android:text="Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/score"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/echange"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:id="@+id/team1" />
+
+    <Button
+        android:text="Smash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/echange"
+        android:layout_toLeftOf="@+id/limit"
+        android:layout_toStartOf="@+id/limit"
+        android:id="@+id/smash_t1" />
+
+    <TextView
+        android:text="t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/team2"
+        android:layout_below="@+id/smash_t1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Smash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/smash_t1"
+        android:layout_alignStart="@+id/smash_t1"
+        android:id="@+id/smash_t2" />
+
+    <Button
+        android:text="Classique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/class_t1"
+        android:layout_below="@+id/echange"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Classique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/class_t1"
+        android:layout_alignLeft="@+id/class_t1"
+        android:layout_alignStart="@+id/class_t1"
+        android:id="@+id/class_t2" />
+
+    <Button
+        android:text="Faute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/faute_t1"
+        android:layout_alignRight="@+id/faute_t1"
+        android:layout_alignEnd="@+id/faute_t1"
+        android:id="@+id/faute_t2" />
+
+    <TextView
+        android:text="Echange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/echange"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_above="@+id/faute_t1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:text="Service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/serv"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/team1"
+        android:layout_toEndOf="@+id/team1" />
+
+    <Button
+        android:text="Filet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:id="@+id/filet"
+        android:layout_alignBaseline="@+id/ace"
+        android:layout_alignBottom="@+id/ace"
+        android:layout_toRightOf="@+id/ace"
+        android:layout_toEndOf="@+id/ace" />
+
+    <Button
+        android:text="Time Out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/time_out"
+        android:layout_below="@+id/serv"
+        android:layout_alignRight="@+id/serv"
+        android:layout_alignEnd="@+id/serv" />
+
+    <Button
+        android:text="Ace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ace"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignBaseline="@+id/serv"
+        android:layout_alignBottom="@+id/serv"
+        android:layout_toRightOf="@+id/serv"
+        android:layout_toEndOf="@+id/serv" />
+
+    <Button
+        android:text="Faute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:id="@+id/faute_t1"
+        android:layout_above="@+id/smash_t2"
+        android:layout_toRightOf="@+id/class_t1"
+        android:layout_toEndOf="@+id/class_t1" />
+
+    <TextView
+        android:text="Nouveau Match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/textView4"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="cursive"
+        android:textStyle="normal|bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

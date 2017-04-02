@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c031696f4a6316eac17c99b81ab19cf652620277">
+        sha1="5c787a8928fc6f39fb5836145a0cef35dfe2e40b">
         <dex dex="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b164282f9ff0b0f0dd57e786c4061dfd5bfec314/classes.dex" />
     </item>
     <item
@@ -66,21 +66,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.2.0_3767996246cf7c9b0c31d179809d3e4a0709aca3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
         <dex dex="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.2.0_fcbcf0fffd90558895ab4606a0cd41ff56c7a8cb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.2.0_3767996246cf7c9b0c31d179809d3e4a0709aca3/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e4463503b4a5e4d25c28788c71cbdc8c64d60c1b">
+        sha1="5ee842ad990984cee2d6687a2711bbca111c5366">
         <dex dex="/Users/rinaattieh/AndroidStudioProjects/Android_Sport_Projet/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_8a75e6051c4d2a421a5e27bc9bf6c14584db40be/classes.dex" />
     </item>
     <item

@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NewMatch" />
+        <activity android:name=".Stat" />
+        <activity android:name=".Players" />
+        <activity android:name=".Go"></activity>
     </application>
 
 </manifest>
