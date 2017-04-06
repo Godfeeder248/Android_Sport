@@ -46,6 +46,7 @@ public class Go extends AppCompatActivity {
         equipe.add("Equipe 1");
         equipe.add("2");
         equipe.add("3");
+        equipe.add("Test 4");
 
         ArrayAdapter adapter = new ArrayAdapter(
                 this,

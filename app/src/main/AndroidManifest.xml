@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path
+        android:name="my_images"
+        android:path="Android/data/com.example.rinaattieh.sports_app_project/files/Pictures" />
+</paths>
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rinaattieh.sports_app_project">
 
+    <!-- Utile pour camera-->
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
+    <!-- Pour enregistrer les donnees -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Pour photos
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
+        -->
+
         <activity
             android:name=".Go"
             android:label="@string/app_name"
@@ -27,4 +55,4 @@
         <activity android:name=".Players"></activity>
     </application>
 
-</manifest>
+    </manifest>

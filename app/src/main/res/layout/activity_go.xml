@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.rinaattieh.android_sport_projet.MainActivity"
+    tools:context="com.example.rinaattieh.sports_app_project.Go"
     tools:showIn="@layout/app_bar_main">
 
     <TextView
@@ -53,5 +53,8 @@
         android:layout_above="@+id/go"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="47dp"
-        android:id="@+id/equipe_menu" />
+        android:id="@+id/equipe_menu"
+        android:background="?attr/colorButtonNormal"
+        android:spinnerMode="dropdown"
+        android:clickable="true" />
 </RelativeLayout>
