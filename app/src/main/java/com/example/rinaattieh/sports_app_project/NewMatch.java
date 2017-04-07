@@ -19,6 +19,18 @@ public class NewMatch extends AppCompatActivity {
     Spinner eq_tab_2;
     TextView eq1;
 
+    // Bouton points services
+    Button service, ace, filet, time_out, limit, out;
+
+    // Bouton points echange
+    Button smash_t1, smash_t2, class_t1, class_t2, faute_t1, faute_t2;
+
+    // TextView Afficher resultat
+    // 4 set a 25 points
+    // 2 team
+    TextView s1_t1, s1_t2, s2_t1, s2_t2, s3_t1, s3_t2, s4_t1, s4_t2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,16 +65,12 @@ public class NewMatch extends AppCompatActivity {
         adapter_tab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         eq_tab_2.setAdapter(adapter_tab);
 
-        //////////////////////////// SWITCH EQUIPE 2 TABLEAU ////////////////////////////////////////////////////////
-
-
         //////////////////////////// SWITCH EQUIPE SERVICE ////////////////////////////////////////////////////////
         switch_service = (Spinner) findViewById(R.id.switch_equipe);
 
         List equipe = new ArrayList();
         equipe.add(txt);
-        equipe.add("Autre 1");
-        equipe.add("Autre 2");
+        equipe.add("Equipe 2");
 
         ArrayAdapter adapter = new ArrayAdapter(
                 this,
@@ -73,13 +81,479 @@ public class NewMatch extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         switch_service.setAdapter(adapter);
 
-
-    //////////////////////////// SWITCH EQUIPE SERVICE ///////////////////////////////////////////////////////////////
-
+        // on récupère le nom de la premiere equipe (selectionné au debut)
         eq1 = (TextView)findViewById(R.id.eq1);
-        eq1.setText("1 : " + txt);
+        eq1.setText(txt);
+
+    //////////////////////// COMPTE POINTS //////////////////////////////////////////////////////
+
+        service = (Button) findViewById(R.id.serv);
+        ace = (Button) findViewById(R.id.ace);
+        filet = (Button) findViewById(R.id.filet);
+        time_out = (Button) findViewById(R.id.time_out);
+        limit = (Button) findViewById(R.id.limit);
+        out = (Button) findViewById(R.id.out);
+
+        smash_t1 = (Button) findViewById(R.id.smash_t1);
+        smash_t2 = (Button) findViewById(R.id.smash_t2);
+        class_t1 = (Button) findViewById(R.id.class_t1);
+        class_t2 = (Button) findViewById(R.id.class_t2);
+        faute_t1 = (Button) findViewById(R.id.faute_t1);
+        faute_t2 = (Button) findViewById(R.id.faute_t2);
+
+        s1_t1 = (TextView)findViewById(R.id.s1_t1);
+        s1_t2 = (TextView)findViewById(R.id.s1_t2);
+        s2_t1 = (TextView)findViewById(R.id.s2_t1);
+        s2_t2 = (TextView)findViewById(R.id.s2_t2);
+        s3_t1 = (TextView)findViewById(R.id.s3_t1);
+        s3_t2 = (TextView)findViewById(R.id.s3_t2);
+        s4_t1 = (TextView)findViewById(R.id.s4_t1);
+        s4_t2 = (TextView)findViewById(R.id.s4_t2);
 
 
-    }
+        final int[] point_s1_t1 = {Integer.parseInt(s1_t1.getText().toString())};
+        final int[] point_s1_t2 = {Integer.parseInt(s1_t2.getText().toString())};
+        final int[] point_s2_t1 = {Integer.parseInt(s2_t1.getText().toString())};
+        final int[] point_s2_t2 = {Integer.parseInt(s2_t2.getText().toString())};
+        final int[] point_s3_t1 = {Integer.parseInt(s3_t1.getText().toString())};
+        final int[] point_s3_t2 = {Integer.parseInt(s3_t2.getText().toString())};
+        final int[] point_s4_t1 = {Integer.parseInt(s4_t1.getText().toString())};
+        final int[] point_s4_t2 = {Integer.parseInt(s4_t2.getText().toString())};
+
+        service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = (String) getIntent().getSerializableExtra("string");
+                String service_equipe = switch_service.getSelectedItem().toString();
+
+                if (service_equipe == txt)
+                {
+                    if (point_s1_t1[0] <= 24 && ( point_s1_t2[0] != 25 ) ){
+                        point_s1_t1[0]++;
+                        s1_t1.setText(""+ point_s1_t1[0]);
+                    }
+                    else if(point_s2_t1[0] <= 24 && ( point_s1_t1[0] ==25 || point_s1_t2[0] == 25) && point_s2_t2[0] !=25 ){
+                        point_s2_t1[0]++;
+                        s2_t1.setText(""+ point_s2_t1[0]);
+                    }
+                    else if(point_s3_t1[0] <= 24 && ( point_s2_t1[0] ==25 || point_s2_t2[0] == 25) && point_s3_t2[0] !=25 ){
+                        point_s3_t1[0]++;
+                        s3_t1.setText(""+ point_s3_t1[0]);
+                    }
+                    else if(point_s4_t1[0] <= 24 && ( point_s3_t1[0] ==25 || point_s3_t2[0] == 25) && point_s4_t2[0] !=25 ){
+                        point_s4_t1[0]++;
+                        s4_t1.setText(""+ point_s4_t1[0]);
+                    }
+                }
+                else
+                {
+                    if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                        point_s1_t2[0]++;
+                        s1_t2.setText(""+ point_s1_t2[0]);
+                    }
+                    else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25){
+                        point_s2_t2[0]++;
+                        s2_t2.setText(""+ point_s2_t2[0]);
+                    }
+                    else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                        point_s3_t2[0]++;
+                        s3_t2.setText(""+ point_s3_t2[0]);
+                    }
+                    else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                        point_s4_t2[0]++;
+                        s4_t2.setText(""+ point_s4_t2[0]);
+                    }
+                }
+            }
+        });
+
+        ace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = (String) getIntent().getSerializableExtra("string");
+                String service_equipe = switch_service.getSelectedItem().toString();
+
+                if (service_equipe == txt)
+                {
+                    if (point_s1_t1[0] <= 24 && ( point_s1_t2[0] != 25 ) ){
+                        point_s1_t1[0]++;
+                        s1_t1.setText(""+ point_s1_t1[0]);
+                    }
+                    else if(point_s2_t1[0] <= 24 && ( point_s1_t1[0] ==25 || point_s1_t2[0] == 25) && point_s2_t2[0] !=25 ){
+                        point_s2_t1[0]++;
+                        s2_t1.setText(""+ point_s2_t1[0]);
+                    }
+                    else if(point_s3_t1[0] <= 24 && ( point_s2_t1[0] ==25 || point_s2_t2[0] == 25) && point_s3_t2[0] !=25 ){
+                        point_s3_t1[0]++;
+                        s3_t1.setText(""+ point_s3_t1[0]);
+                    }
+                    else if(point_s4_t1[0] <= 24 && ( point_s3_t1[0] ==25 || point_s3_t2[0] == 25) && point_s4_t2[0] !=25 ){
+                        point_s4_t1[0]++;
+                        s4_t1.setText(""+ point_s4_t1[0]);
+                    }
+                }
+                else
+                {
+                    if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                        point_s1_t2[0]++;
+                        s1_t2.setText(""+ point_s1_t2[0]);
+                    }
+                    else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25){
+                        point_s2_t2[0]++;
+                        s2_t2.setText(""+ point_s2_t2[0]);
+                    }
+                    else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                        point_s3_t2[0]++;
+                        s3_t2.setText(""+ point_s3_t2[0]);
+                    }
+                    else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                        point_s4_t2[0]++;
+                        s4_t2.setText(""+ point_s4_t2[0]);
+                    }
+                }
+            }
+        });
+
+        filet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = (String) getIntent().getSerializableExtra("string");
+                String service_equipe = switch_service.getSelectedItem().toString();
+
+                if (service_equipe == txt)
+                {
+                    if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ){
+                        point_s1_t2[0]++;
+                        s1_t2.setText(""+ point_s1_t2[0]);
+                    }
+                    else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] ==25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25 ){
+                        point_s2_t2[0]++;
+                        s2_t2.setText(""+ point_s2_t2[0]);
+                    }
+                    else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] ==25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                        point_s3_t2[0]++;
+                        s3_t2.setText(""+ point_s3_t2[0]);
+                    }
+                    else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] ==25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                        point_s4_t2[0]++;
+                        s4_t2.setText(""+ point_s4_t2[0]);
+                    }
+                }
+                else
+                {
+                    if (point_s1_t1[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                        point_s1_t1[0]++;
+                        s1_t1.setText(""+ point_s1_t1[0]);
+                    }
+                    else if(point_s2_t1[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] !=25){
+                        point_s2_t1[0]++;
+                        s2_t1.setText(""+ point_s2_t1[0]);
+                    }
+                    else if(point_s3_t1[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] !=25 ){
+                        point_s3_t1[0]++;
+                        s3_t1.setText(""+ point_s3_t1[0]);
+                    }
+                    else if(point_s4_t1[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] !=25 ){
+                        point_s4_t1[0]++;
+                        s4_t1.setText(""+ point_s4_t1[0]);
+                    }
+                }
+            }
+        });
+
+        time_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = (String) getIntent().getSerializableExtra("string");
+                String service_equipe = switch_service.getSelectedItem().toString();
+
+                if (service_equipe == txt)
+                {
+                    if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ){
+                        point_s1_t2[0]++;
+                        s1_t2.setText(""+ point_s1_t2[0]);
+                    }
+                    else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] ==25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25 ){
+                        point_s2_t2[0]++;
+                        s2_t2.setText(""+ point_s2_t2[0]);
+                    }
+                    else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] ==25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                        point_s3_t2[0]++;
+                        s3_t2.setText(""+ point_s3_t2[0]);
+                    }
+                    else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] ==25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                        point_s4_t2[0]++;
+                        s4_t2.setText(""+ point_s4_t2[0]);
+                    }
+                }
+                else
+                {
+                    if (point_s1_t1[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                        point_s1_t1[0]++;
+                        s1_t1.setText(""+ point_s1_t1[0]);
+                    }
+                    else if(point_s2_t1[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] !=25){
+                        point_s2_t1[0]++;
+                        s2_t1.setText(""+ point_s2_t1[0]);
+                    }
+                    else if(point_s3_t1[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] !=25 ){
+                        point_s3_t1[0]++;
+                        s3_t1.setText(""+ point_s3_t1[0]);
+                    }
+                    else if(point_s4_t1[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] !=25 ){
+                        point_s4_t1[0]++;
+                        s4_t1.setText(""+ point_s4_t1[0]);
+                    }
+                }
+            }
+        });
+
+        limit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = (String) getIntent().getSerializableExtra("string");
+                String service_equipe = switch_service.getSelectedItem().toString();
+
+                if (service_equipe == txt)
+                {
+                    if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ){
+                        point_s1_t2[0]++;
+                        s1_t2.setText(""+ point_s1_t2[0]);
+                    }
+                    else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] ==25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25 ){
+                        point_s2_t2[0]++;
+                        s2_t2.setText(""+ point_s2_t2[0]);
+                    }
+                    else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] ==25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                        point_s3_t2[0]++;
+                        s3_t2.setText(""+ point_s3_t2[0]);
+                    }
+                    else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] ==25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                        point_s4_t2[0]++;
+                        s4_t2.setText(""+ point_s4_t2[0]);
+                    }
+                }
+                else
+                {
+                    if (point_s1_t1[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                        point_s1_t1[0]++;
+                        s1_t1.setText(""+ point_s1_t1[0]);
+                    }
+                    else if(point_s2_t1[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] !=25){
+                        point_s2_t1[0]++;
+                        s2_t1.setText(""+ point_s2_t1[0]);
+                    }
+                    else if(point_s3_t1[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] !=25 ){
+                        point_s3_t1[0]++;
+                        s3_t1.setText(""+ point_s3_t1[0]);
+                    }
+                    else if(point_s4_t1[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] !=25 ){
+                        point_s4_t1[0]++;
+                        s4_t1.setText(""+ point_s4_t1[0]);
+                    }
+                }
+            }
+        });
+
+        out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = (String) getIntent().getSerializableExtra("string");
+                String service_equipe = switch_service.getSelectedItem().toString();
+
+                if (service_equipe == txt)
+                {
+                    if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ){
+                        point_s1_t2[0]++;
+                        s1_t2.setText(""+ point_s1_t2[0]);
+                    }
+                    else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] ==25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25 ){
+                        point_s2_t2[0]++;
+                        s2_t2.setText(""+ point_s2_t2[0]);
+                    }
+                    else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] ==25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                        point_s3_t2[0]++;
+                        s3_t2.setText(""+ point_s3_t2[0]);
+                    }
+                    else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] ==25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                        point_s4_t2[0]++;
+                        s4_t2.setText(""+ point_s4_t2[0]);
+                    }
+                }
+                else
+                {
+                    if (point_s1_t1[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                        point_s1_t1[0]++;
+                        s1_t1.setText(""+ point_s1_t1[0]);
+                    }
+                    else if(point_s2_t1[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] !=25){
+                        point_s2_t1[0]++;
+                        s2_t1.setText(""+ point_s2_t1[0]);
+                    }
+                    else if(point_s3_t1[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] !=25 ){
+                        point_s3_t1[0]++;
+                        s3_t1.setText(""+ point_s3_t1[0]);
+                    }
+                    else if(point_s4_t1[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] !=25 ){
+                        point_s4_t1[0]++;
+                        s4_t1.setText(""+ point_s4_t1[0]);
+                    }
+                }
+            }
+        });
+
+        smash_t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (point_s1_t1[0] <= 24 && (point_s1_t2[0] != 25)) {
+                    point_s1_t1[0]++;
+                    s1_t1.setText("" + point_s1_t1[0]);
+                }
+                else if (point_s2_t1[0] <= 24 && (point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] != 25) {
+                    point_s2_t1[0]++;
+                    s2_t1.setText("" + point_s2_t1[0]);
+                }
+                else if (point_s3_t1[0] <= 24 && (point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] != 25) {
+                    point_s3_t1[0]++;
+                    s3_t1.setText("" + point_s3_t1[0]);
+                }
+                else if (point_s4_t1[0] <= 24 && (point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] != 25) {
+                    point_s4_t1[0]++;
+                    s4_t1.setText("" + point_s4_t1[0]);
+                }
+            }
+        });
+
+        smash_t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                    point_s1_t2[0]++;
+                    s1_t2.setText(""+ point_s1_t2[0]);
+                }
+                else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25){
+                    point_s2_t2[0]++;
+                    s2_t2.setText(""+ point_s2_t2[0]);
+                }
+                else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                    point_s3_t2[0]++;
+                    s3_t2.setText(""+ point_s3_t2[0]);
+                }
+                else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                    point_s4_t2[0]++;
+                    s4_t2.setText(""+ point_s4_t2[0]);
+                }
+            }
+
+        });
+
+        class_t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (point_s1_t1[0] <= 24 && (point_s1_t2[0] != 25)) {
+                    point_s1_t1[0]++;
+                    s1_t1.setText("" + point_s1_t1[0]);
+                }
+                else if (point_s2_t1[0] <= 24 && (point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] != 25) {
+                    point_s2_t1[0]++;
+                    s2_t1.setText("" + point_s2_t1[0]);
+                }
+                else if (point_s3_t1[0] <= 24 && (point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] != 25) {
+                    point_s3_t1[0]++;
+                    s3_t1.setText("" + point_s3_t1[0]);
+                }
+                else if (point_s4_t1[0] <= 24 && (point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] != 25) {
+                    point_s4_t1[0]++;
+                    s4_t1.setText("" + point_s4_t1[0]);
+                }
+            }
+        });
+
+        class_t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                    point_s1_t2[0]++;
+                    s1_t2.setText(""+ point_s1_t2[0]);
+                }
+                else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25){
+                    point_s2_t2[0]++;
+                    s2_t2.setText(""+ point_s2_t2[0]);
+                }
+                else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                    point_s3_t2[0]++;
+                    s3_t2.setText(""+ point_s3_t2[0]);
+                }
+                else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                    point_s4_t2[0]++;
+                    s4_t2.setText(""+ point_s4_t2[0]);
+                }
+            }
+
+        });
+
+        faute_t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (point_s1_t2[0] <= 24 && ( point_s1_t1[0] != 25 ) ) {
+                    point_s1_t2[0]++;
+                    s1_t2.setText(""+ point_s1_t2[0]);
+                }
+                else if(point_s2_t2[0] <= 24 && ( point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t1[0] !=25){
+                    point_s2_t2[0]++;
+                    s2_t2.setText(""+ point_s2_t2[0]);
+                }
+                else if(point_s3_t2[0] <= 24 && ( point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t1[0] !=25 ){
+                    point_s3_t2[0]++;
+                    s3_t2.setText(""+ point_s3_t2[0]);
+                }
+                else if(point_s4_t2[0] <= 24 && ( point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t1[0] !=25 ){
+                    point_s4_t2[0]++;
+                    s4_t2.setText(""+ point_s4_t2[0]);
+                }
+            }
+        });
+
+        faute_t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (point_s1_t1[0] <= 24 && (point_s1_t2[0] != 25)) {
+                    point_s1_t1[0]++;
+                    s1_t1.setText("" + point_s1_t1[0]);
+                }
+                else if (point_s2_t1[0] <= 24 && (point_s1_t1[0] == 25 || point_s1_t2[0] == 25) && point_s2_t2[0] != 25) {
+                    point_s2_t1[0]++;
+                    s2_t1.setText("" + point_s2_t1[0]);
+                }
+                else if (point_s3_t1[0] <= 24 && (point_s2_t1[0] == 25 || point_s2_t2[0] == 25) && point_s3_t2[0] != 25) {
+                    point_s3_t1[0]++;
+                    s3_t1.setText("" + point_s3_t1[0]);
+                }
+                else if (point_s4_t1[0] <= 24 && (point_s3_t1[0] == 25 || point_s3_t2[0] == 25) && point_s4_t2[0] != 25) {
+                    point_s4_t1[0]++;
+                    s4_t1.setText("" + point_s4_t1[0]);
+                }
+            }
+        });
+
+
+
+
+
+
+
+    } // fin OnCreate
 
 }

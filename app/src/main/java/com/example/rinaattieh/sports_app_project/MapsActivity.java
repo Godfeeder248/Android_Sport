@@ -1,18 +1,32 @@
 package com.example.rinaattieh.sports_app_project;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import static java.lang.String.valueOf;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private GoogleMap mMap;
+    Marker marker;
+    LocationListener mListener;
+    LatLng position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +36,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        TextView loc = (TextView) findViewById(R.id.loc_map);
+
+
     }
 
 
@@ -38,9 +56,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // Depose le marqueur à Paris
+        LatLng paris = new LatLng(48, 2);
+        mMap.addMarker(new MarkerOptions().position(paris).title("Marker in Paris"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(paris));
+
+
+    }
+
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+        marker.remove();
+        marker = mMap.addMarker(new MarkerOptions().position(position));
+
+        //double lat = position.latitude();
+        //float lng = (float) (position.getLongitude());
+        //mListener.TouchPos(position.latitude, position.longitude);
+
     }
 }

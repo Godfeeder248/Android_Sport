@@ -74,7 +74,7 @@
         android:id="@+id/tableLayout2">
 
         <TableRow>
-            <TextView android:text="-"/>
+            <TextView android:text=" "/>
 
             <TextView
                 android:text="   Set 1     "
@@ -102,24 +102,32 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/s1_t1"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
-                android:textAlignment="center" />
+                android:inputType="number"/>
 
             <TextView
+                android:id="@+id/s2_t1"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
-                android:textAlignment="center" />
+                android:inputType="number"/>
 
             <TextView
+                android:id="@+id/s3_t1"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
-                android:textAlignment="center" />
+                android:inputType="number"/>
 
             <TextView
+                android:id="@+id/s4_t1"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
-                android:textAlignment="center" />
+                android:inputType="number"/>
         </TableRow>
 
         <TableRow >
@@ -127,27 +135,36 @@
             <Spinner
                 android:id="@+id/eq_tab_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:popupBackground="?android:attr/colorFocusedHighlight" />
 
             <TextView
+                android:id="@+id/s1_t2"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="?android:attr/colorFocusedHighlight"
-                android:textAlignment="center" />
+                android:inputType="number"/>
 
             <TextView
+                android:id="@+id/s2_t2"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="?android:attr/colorFocusedHighlight"
-                android:textAlignment="center" />
+                android:inputType="number"/>
 
             <TextView
+                android:id="@+id/s3_t2"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="?android:attr/colorFocusedHighlight"
-                android:textAlignment="center" />
+                android:inputType="number"/>
 
             <TextView
+                android:id="@+id/s4_t2"
                 android:text="0"
+                android:textAlignment="center"
                 android:textColor="?android:attr/colorFocusedHighlight"
-                android:textAlignment="center" />
+                android:inputType="number"/>
         </TableRow>
 
     </TableLayout>
