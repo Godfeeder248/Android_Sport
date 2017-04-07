@@ -133,8 +133,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.new_match) {
+            //recupère l'équipe selectionne au debut
+            String txt = (String) getIntent().getSerializableExtra("string");
             Intent newAct = new Intent(getApplicationContext(), NewMatch.class);
+            newAct.putExtra("string", txt);
             startActivity(newAct);
+
 
         } else if (id == R.id.stat) {
             Intent newAct = new Intent(getApplicationContext(), Stat.class);

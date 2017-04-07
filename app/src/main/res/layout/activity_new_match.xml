@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_new_match"
@@ -10,19 +13,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rinaattieh.sports_app_project.NewMatch">
 
+
     <TextView
-        android:text="Service"
+        android:id="@+id/service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
-        android:id="@+id/service"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimary"
-        android:layout_below="@+id/btn_map"
-        android:layout_alignRight="@+id/faute_t1"
-        android:layout_alignEnd="@+id/faute_t1"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tableLayout2"
+        android:layout_marginTop="15dp"
+        android:text="Service"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:text="Limit"
@@ -43,28 +48,120 @@
         android:id="@+id/out" />
 
     <TextView
-        android:text="Score"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:id="@+id/score"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimary"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView4"
+        android:layout_marginTop="31dp"
+        android:text="Score"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <TableLayout style="@style/frag1TableLayout"
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:weightSum="1"
+        android:layout_below="@+id/score"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="14dp"
+        android:id="@+id/tableLayout2">
+
+        <TableRow>
+            <TextView android:text="-"/>
+
+            <TextView
+                android:text="   Set 1     "
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="Set 2     "
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="Set 3     "
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="Set 4     "
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/eq1"
+                android:text="Equipe 1"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="0"
+                android:textColor="@android:color/holo_green_dark"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="0"
+                android:textColor="@android:color/holo_green_dark"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="0"
+                android:textColor="@android:color/holo_green_dark"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="0"
+                android:textColor="@android:color/holo_green_dark"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow >
+
+            <Spinner
+                android:id="@+id/eq_tab_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="0"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="0"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="0"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="0"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:textAlignment="center" />
+        </TableRow>
+
+    </TableLayout>
+
 
     <TextView
-        android:text="t1"
+        android:id="@+id/team1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/echange"
         android:layout_marginTop="14dp"
-        android:id="@+id/team1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="1" />
 
     <Button
         android:text="Smash"
@@ -76,14 +173,14 @@
         android:layout_alignStart="@+id/time_out" />
 
     <TextView
-        android:text="t2"
+        android:id="@+id/team2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:id="@+id/team2"
-        android:layout_below="@+id/smash_t1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/smash_t1"
+        android:layout_marginTop="17dp"
+        android:text="2" />
 
     <Button
         android:text="Smash"
@@ -123,18 +220,19 @@
         android:layout_alignStart="@+id/faute_t1" />
 
     <TextView
-        android:text="Echange"
+        android:id="@+id/echange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/echange"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/time_out"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/time_out"
+        android:layout_marginTop="11dp"
+        android:text="Echange"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:text="Service"
@@ -155,18 +253,18 @@
         android:id="@+id/filet"
         android:layout_alignBaseline="@+id/ace"
         android:layout_alignBottom="@+id/ace"
-        android:layout_alignLeft="@+id/btn_map"
-        android:layout_alignStart="@+id/btn_map" />
+        android:layout_toRightOf="@+id/class_t1"
+        android:layout_toEndOf="@+id/class_t1" />
 
     <Button
         android:text="Time Out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="9dp"
         android:id="@+id/time_out"
         android:layout_below="@+id/serv"
-        android:layout_alignRight="@+id/serv"
-        android:layout_alignEnd="@+id/serv" />
+        android:layout_alignLeft="@+id/serv"
+        android:layout_alignStart="@+id/serv" />
 
     <Button
         android:text="Ace"
@@ -191,38 +289,45 @@
         android:layout_marginStart="13dp" />
 
     <TextView
-        android:text="Nouveau Match"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="cursive"
-        android:textStyle="normal|bold"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="cursive"
+        android:text="Nouveau Match"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:text="Localisation du Match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/score"
-        android:layout_toRightOf="@+id/class_t1"
-        android:layout_toEndOf="@+id/class_t1"
         android:id="@+id/btn_map"
         android:elevation="0dp"
         android:fontFamily="sans-serif-medium"
         android:textSize="12sp"
         android:textColor="@android:color/background_light"
         android:textAlignment="center"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:layout_above="@+id/tableLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-
-
+    <Spinner
+        android:id="@+id/switch_equipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/filet"
+        android:layout_alignRight="@+id/filet"
+        android:layout_alignTop="@+id/service"
+        android:layout_toRightOf="@+id/serv"
+        android:background="@color/wallet_bright_foreground_holo_dark" />
 
 
 </RelativeLayout>
