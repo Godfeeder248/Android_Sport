@@ -1,32 +1,40 @@
 package com.example.rinaattieh.sports_app_project;
 
+import android.*;
+import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import static java.lang.String.valueOf;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     Marker marker;
-    LocationListener mListener;
-    LatLng position;
+    TextView lat_map;
+    TextView lng_map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +44,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-    }
 
+        lat_map = (TextView) findViewById(R.id.lat_map);
+        lng_map = (TextView) findViewById(R.id.lng_map);
+
+    }
 
     /**
      * Manipulates the map once available.
@@ -48,23 +59,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // Depose le marqueur à Paris
-        LatLng paris = new LatLng(48, 2);
-        mMap.addMarker(new MarkerOptions().position(paris).title("Marker in Paris"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(paris));
-    }
+        //LatLng paris = new LatLng(48, 2);
+        //mMap.addMarker(new MarkerOptions().position(paris).title("Marker in Paris"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(paris));
 
-    // Pour ajouter le marqeur au clic
-    @Override
-    public void onMapClick(LatLng latLng) {
-        marker.remove();
-        marker = mMap.addMarker(new MarkerOptions().position(position));
-        //mListener.TouchPos(position.latitude, position.longitude);
+        googleMap.setOnMapClickListener(new com.google.android.gms.maps.GoogleMap.OnMapClickListener() {
 
-        //A completer, methode TouchPos()
+            @Override
+            public void onMapClick(LatLng position) {
+                mMap.clear();
+                marker = mMap.addMarker(new MarkerOptions().position(position));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+                lat_map.setText("Latitude : " + position.latitude);
+                lng_map.setText("Longitude : " + position.longitude);
+            }
+        });
     }
 }
