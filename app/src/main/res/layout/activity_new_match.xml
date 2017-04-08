@@ -18,16 +18,16 @@
         android:id="@+id/service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tableLayout2"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:text="Service"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/tableLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="Limit"
@@ -51,16 +51,16 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="40dp"
         android:text="Score"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
     <TableLayout style="@style/frag1TableLayout"
@@ -73,8 +73,11 @@
         android:layout_marginTop="14dp"
         android:id="@+id/tableLayout2">
 
-        <TableRow>
-            <TextView android:text=" "/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text=" " />
 
             <TextView
                 android:text="   Set 1     "
@@ -136,7 +139,9 @@
                 android:id="@+id/eq_tab_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:popupBackground="?android:attr/colorFocusedHighlight" />
+                android:foregroundTint="?android:attr/colorFocusedHighlight"
+                android:popupBackground="?android:attr/colorBackground"
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/s1_t2"
@@ -224,15 +229,16 @@
         android:id="@+id/class_t2"
         android:layout_alignBaseline="@+id/smash_t2"
         android:layout_alignBottom="@+id/smash_t2"
-        android:layout_alignLeft="@+id/limit" />
+        android:layout_alignLeft="@+id/class_t1"
+        android:layout_alignStart="@+id/class_t1" />
 
     <Button
         android:text="Faute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/faute_t2"
-        android:layout_alignBaseline="@+id/class_t2"
-        android:layout_alignBottom="@+id/class_t2"
+        android:layout_alignBaseline="@+id/team2"
+        android:layout_alignBottom="@+id/team2"
         android:layout_alignLeft="@+id/faute_t1"
         android:layout_alignStart="@+id/faute_t1" />
 
@@ -240,16 +246,16 @@
         android:id="@+id/echange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/time_out"
-        android:layout_marginTop="11dp"
         android:text="Echange"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/limit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="Service"
@@ -343,8 +349,21 @@
         android:layout_alignEnd="@+id/filet"
         android:layout_alignRight="@+id/filet"
         android:layout_alignTop="@+id/service"
-        android:layout_toRightOf="@+id/serv"
-        android:background="@color/wallet_bright_foreground_holo_dark" />
+        android:layout_toRightOf="@+id/serv" />
+
+    <Button
+        android:id="@+id/valider_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Valider"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/faute_t2"
+        android:layout_alignLeft="@+id/faute_t2"
+        android:layout_alignStart="@+id/faute_t2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="17dp" />
 
 
 </RelativeLayout>

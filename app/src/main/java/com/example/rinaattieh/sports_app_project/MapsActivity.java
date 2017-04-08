@@ -36,10 +36,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        TextView loc = (TextView) findViewById(R.id.loc_map);
-
-
     }
 
 
@@ -60,19 +56,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng paris = new LatLng(48, 2);
         mMap.addMarker(new MarkerOptions().position(paris).title("Marker in Paris"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(paris));
-
-
     }
 
-
+    // Pour ajouter le marqeur au clic
     @Override
     public void onMapClick(LatLng latLng) {
         marker.remove();
         marker = mMap.addMarker(new MarkerOptions().position(position));
-
-        //double lat = position.latitude();
-        //float lng = (float) (position.getLongitude());
         //mListener.TouchPos(position.latitude, position.longitude);
 
+        //A completer, methode TouchPos()
     }
 }

@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /* Pas utile
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Recup du nom de l'equipe pour l'afficher
         String txt = (String) getIntent().getSerializableExtra("string");
-
         TextView equipe = (TextView )findViewById(R.id.nom_equipe);
         equipe.setText("Equipe :  " + txt);
     }
@@ -81,9 +82,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -122,6 +120,9 @@ public class MainActivity extends AppCompatActivity
         Uri contentUri = Uri.fromFile(f);
         mediaScanIntent.setData(contentUri);
         this.sendBroadcast(mediaScanIntent);
+        //Probleme de chemin en commentaire dans le manifest
+        // Autre methode : Apres avec creer la base de donnes avce SQLite, enregistrer les photos
+        // directement, meme si pas recommandé
     }
 
     ////////////////////////////////////////////////////////// PHOTOS ////////////////////////////////////////////
@@ -139,7 +140,6 @@ public class MainActivity extends AppCompatActivity
             newAct.putExtra("string", txt);
             startActivity(newAct);
 
-
         } else if (id == R.id.stat) {
             //recupère l'équipe selectionne au debut
             String txt = (String) getIntent().getSerializableExtra("string");
@@ -147,13 +147,24 @@ public class MainActivity extends AppCompatActivity
             newAct.putExtra("string", txt);
             startActivity(newAct);
 
+            // Faire les requete pour affciher les stat dans les textview
+            //COmment ??
+
 
         } else if (id == R.id.players) {
             Intent newAct = new Intent(getApplicationContext(), Players.class);
             startActivity(newAct);
+            // A supprimer ou Mettre une phrase de renseignement dans le xml
 
         } else if (id == R.id.nav_camera) {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            // Test pour voir si la camera marche, une foid le probleme de stckage de photo réglé
+            // Elever la ligne suivante et décommenter le reste
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+
+            /* A DECOMMENTER ENSUITE
+
             // Ensure that there's a camera activity to handle the intent
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                 // Create the File where the photo should go
@@ -171,15 +182,10 @@ public class MainActivity extends AppCompatActivity
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                 }
-            }
+            }*/
 
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            //Requete pour afficher toutes les photos stockés, si possible les classer par date
 
         }
 

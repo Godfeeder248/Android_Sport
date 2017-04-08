@@ -15,5 +15,7 @@ public class Stat extends AppCompatActivity {
         String team = (String) getIntent().getSerializableExtra("string");
         TextView nom_equipe_stat = (TextView )findViewById(R.id.nom_equipe_stat);
         nom_equipe_stat.setText("Equipe :  " + team);
+
+        //Faire les requete pour pouvoir afficher les infos dans textView
     }
 }
