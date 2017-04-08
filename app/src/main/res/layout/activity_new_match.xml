@@ -11,21 +11,19 @@
     tools:context="com.example.rinaattieh.sports_app_project.NewMatch">
 
     <TextView
-        android:text="Service"
+        android:text="@string/Service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="69dp"
         android:id="@+id/service"
         android:textSize="18sp"
         android:textColor="@color/colorPrimary"
         android:layout_below="@+id/btn_map"
-        android:layout_alignRight="@+id/faute_t1"
-        android:layout_alignEnd="@+id/faute_t1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Limit"
+        android:text="@string/Limit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/time_out"
@@ -34,7 +32,7 @@
         android:id="@+id/limit" />
 
     <Button
-        android:text="Out"
+        android:text="@string/Out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/limit"
@@ -43,7 +41,7 @@
         android:id="@+id/out" />
 
     <TextView
-        android:text="Score"
+        android:text="@string/Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -57,46 +55,43 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="t1"
+        android:text="@string/Team1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/echange"
-        android:layout_marginTop="14dp"
         android:id="@+id/team1"
+        android:layout_below="@+id/echange"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Smash"
+        android:text="@string/Smash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/smash_t1"
-        android:layout_alignTop="@+id/team1"
+        android:layout_below="@+id/team1"
         android:layout_alignLeft="@+id/time_out"
         android:layout_alignStart="@+id/time_out" />
 
     <TextView
-        android:text="t2"
+        android:text="@string/Team2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
         android:id="@+id/team2"
         android:layout_below="@+id/smash_t1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Smash"
+        android:text="@string/Smash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/smash_t2"
-        android:layout_alignBaseline="@+id/team2"
-        android:layout_alignBottom="@+id/team2"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/smash_t1"
         android:layout_alignStart="@+id/smash_t1" />
 
     <Button
-        android:text="Classique"
+        android:text="@string/Classic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/class_t1"
@@ -104,7 +99,7 @@
         android:layout_alignBottom="@+id/smash_t1"/>
 
     <Button
-        android:text="Classique"
+        android:text="@string/Classic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/class_t2"
@@ -113,7 +108,7 @@
         android:layout_alignLeft="@+id/limit" />
 
     <Button
-        android:text="Faute"
+        android:text="@string/Fault"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/faute_t2"
@@ -123,7 +118,7 @@
         android:layout_alignStart="@+id/faute_t1" />
 
     <TextView
-        android:text="Echange"
+        android:text="@string/Rally"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/echange"
@@ -137,7 +132,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Service"
+        android:text="@string/Service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/serv"
@@ -149,7 +144,7 @@
         android:layout_marginTop="13dp" />
 
     <Button
-        android:text="Filet"
+        android:text="@string/Let"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/filet"
@@ -159,7 +154,7 @@
         android:layout_alignStart="@+id/btn_map" />
 
     <Button
-        android:text="Time Out"
+        android:text="@string/Time_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -169,7 +164,7 @@
         android:layout_alignEnd="@+id/serv" />
 
     <Button
-        android:text="Ace"
+        android:text="@string/Ace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ace"
@@ -179,7 +174,7 @@
         android:layout_alignStart="@+id/class_t1" />
 
     <Button
-        android:text="Faute"
+        android:text="@string/Fault"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/faute_t1"
@@ -191,7 +186,7 @@
         android:layout_marginStart="13dp" />
 
     <TextView
-        android:text="Nouveau Match"
+        android:text="@string/New_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
@@ -207,22 +202,19 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Localisation du Match"
+        android:id="@+id/btn_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/score"
-        android:layout_toRightOf="@+id/class_t1"
-        android:layout_toEndOf="@+id/class_t1"
-        android:id="@+id/btn_map"
+        android:background="@color/colorPrimary"
         android:elevation="0dp"
         android:fontFamily="sans-serif-medium"
-        android:textSize="12sp"
-        android:textColor="@android:color/background_light"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        android:text="@string/Local_m"
         android:textAlignment="center"
-        android:background="@color/colorPrimary" />
-
-
-
-
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        android:layout_alignTop="@+id/score"
+        android:layout_toRightOf="@+id/ace" />
 
 </RelativeLayout>

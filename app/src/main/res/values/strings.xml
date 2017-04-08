@@ -6,4 +6,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="Service">Service</string>
+    <string name="Limit">Limit</string>
+    <string name="Out">Out</string>
+    <string name="Score">Score</string>
+    <string name="Team1">Team 1</string>
+    <string name="Team2">Team 2</string>
+    <string name="Smash">Smash</string>
+    <string name="Classic">Classic</string>
+    <string name="Fault">Fault</string>
+    <string name="Rally">Rally</string>
+    <string name="Let">Let</string>
+    <string name="Time_out">Time out</string>
+    <string name="Ace">Ace</string>
+    <string name="New_m">New match</string>
+    <string name="Local_m">Match Location</string>
 </resources>
