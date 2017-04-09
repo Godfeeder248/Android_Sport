@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Application Sportive</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title_activity_main">Activité Principale</string>
+
+    <string name="navigation_drawer_open">Ouvrir la fenêtre de navigation</string>
+    <string name="navigation_drawer_close">Fermer la fenêtre de navigation</string>
+    <string name="title_activity_maps">Carte</string>
+
+    <string name="Service">Service</string>
+    <string name="Limit">Limite</string>
+    <string name="Out">En dehors</string>
+    <string name="Score">Score</string>
+    <string name="Team1">Équipe 1</string>
+    <string name="Team2">Équipe 2</string>
+    <string name="Smash">Smash</string>
+    <string name="Classic">Classique</string>
+    <string name="Fault">Faute</string>
+    <string name="Rally">Échange</string>
+    <string name="Let">Filet</string>
+    <string name="Time_out">Temps écoulé</string>
+    <string name="Ace">Ace</string>
+    <string name="New_m">Nouveau match</string>
+    <string name="Local_m">Localisation du match</string>
+    <string name="Set_1">Set 1</string>
+    <string name="Set_2">Set 2</string>
+    <string name="Set_3">Set 3</string>
+    <string name="Set_4">Set 4</string>
+    <string name="Team">Équipe :</string>
+    <string name="Standing">Classement</string>
+    <string name="Number_match">Nombre de matchs</string>
+</resources>
