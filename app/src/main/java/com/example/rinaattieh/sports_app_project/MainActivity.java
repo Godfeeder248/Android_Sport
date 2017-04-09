@@ -2,9 +2,13 @@ package com.example.rinaattieh.sports_app_project;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,7 +29,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener  {
 
-
+    private SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -205,5 +209,21 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /*******************************
+     *          DATABASE
+     ******************************/
+
+    public  void open() throws SQLiteException{
+        try{
+            db = dbHelper.getWritableDatabase();
+        } catch (SQLiteException ex){
+            db = dbHelper.getReadableDatabase();
+        }
+    }
+
+    public void close(){
+        db.close();
     }
 }
