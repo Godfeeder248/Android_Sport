@@ -22,4 +22,14 @@
     <string name="Ace">Ace</string>
     <string name="New_m">New match</string>
     <string name="Local_m">Match Location</string>
+    <string name="Set_1">Set 1</string>
+    <string name="Set_2">Set 2</string>
+    <string name="Set_3">Set 3</string>
+    <string name="Set_4">Set 4</string>
+    <string name="Team">Team :</string>
+    <string name="Standing">Standing</string>
+    <string name="Number_match">How many matches</string>
+    <string name="Next_match">Next match</string>
+    <string name="English">English</string>
+    <string name="French">Français</string>
 </resources>

@@ -29,7 +29,8 @@ public class Go extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /* Pas utile
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,10 +44,10 @@ public class Go extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.equipe_menu);
 
         List equipe = new ArrayList();
-        equipe.add("Equipe 1");
-        equipe.add("2");
-        equipe.add("3");
-        equipe.add("Test 4");
+        equipe.add("France");
+        equipe.add("Espagne");
+        equipe.add("Italie");
+        equipe.add("Allemagne");
 
         ArrayAdapter adapter = new ArrayAdapter(
                 this,

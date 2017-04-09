@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_new_match"
@@ -10,17 +13,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rinaattieh.sports_app_project.NewMatch">
 
+
     <TextView
-        android:text="@string/Service"
+        android:id="@+id/service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
-        android:id="@+id/service"
-        android:textSize="18sp"
+        android:layout_marginTop="12dp"
+        android:text="@string/Service"
         android:textColor="@color/colorPrimary"
-        android:layout_below="@+id/btn_map"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/tableLayout2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 
     <Button
         android:text="@string/Limit"
@@ -41,52 +46,177 @@
         android:id="@+id/out" />
 
     <TextView
-        android:text="@string/Score"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:id="@+id/score"
-        android:textSize="18sp"
+        android:layout_marginTop="40dp"
+        android:text="@string/Score"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+
+    <TableLayout style="@style/frag1TableLayout"
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:weightSum="1"
+        android:layout_below="@+id/score"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:id="@+id/tableLayout2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text=" " />
+
+            <TextView
+                android:text="@string/Set_1"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/Set_2"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/Set_3"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/Set_4"
+                android:paddingLeft="5sp"
+                android:paddingRight="5sp"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/eq1"
+                android:text="@string/Team1"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/s1_t1"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/s2_t1"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/s3_t1"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/s4_t1"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:inputType="number"/>
+        </TableRow>
+
+        <TableRow >
+
+            <Spinner
+                android:id="@+id/eq_tab_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foregroundTint="?android:attr/colorFocusedHighlight"
+                android:popupBackground="?android:attr/colorBackground"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/s1_t2"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/s2_t2"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/s3_t2"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/s4_t2"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                android:inputType="number"/>
+        </TableRow>
+
+    </TableLayout>
+
+
     <TextView
-        android:text="@string/Team1"
+        android:id="@+id/team1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/team1"
-        android:layout_below="@+id/echange"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/echange"
+        android:layout_marginTop="14dp"
+        android:text="1" />
 
     <Button
         android:text="@string/Smash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/smash_t1"
-        android:layout_below="@+id/team1"
+        android:layout_alignTop="@+id/team1"
         android:layout_alignLeft="@+id/time_out"
         android:layout_alignStart="@+id/time_out" />
 
     <TextView
-        android:text="@string/Team2"
+        android:id="@+id/team2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/team2"
-        android:layout_below="@+id/smash_t1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/smash_t1"
+        android:layout_marginTop="17dp"
+        android:text="2" />
 
     <Button
         android:text="@string/Smash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/smash_t2"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBaseline="@+id/team2"
+        android:layout_alignBottom="@+id/team2"
         android:layout_alignLeft="@+id/smash_t1"
         android:layout_alignStart="@+id/smash_t1" />
 
@@ -105,31 +235,31 @@
         android:id="@+id/class_t2"
         android:layout_alignBaseline="@+id/smash_t2"
         android:layout_alignBottom="@+id/smash_t2"
-        android:layout_alignLeft="@+id/limit" />
+        android:layout_alignLeft="@+id/class_t1"
+        android:layout_alignStart="@+id/class_t1" />
 
     <Button
         android:text="@string/Fault"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/faute_t2"
-        android:layout_alignBaseline="@+id/class_t2"
-        android:layout_alignBottom="@+id/class_t2"
+        android:layout_alignBaseline="@+id/team2"
+        android:layout_alignBottom="@+id/team2"
         android:layout_alignLeft="@+id/faute_t1"
         android:layout_alignStart="@+id/faute_t1" />
 
     <TextView
-        android:text="@string/Rally"
+        android:id="@+id/echange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/echange"
-        android:textSize="18sp"
+        android:text="@string/Rally"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_marginTop="11dp"
         android:layout_below="@+id/time_out"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="@string/Service"
@@ -150,18 +280,18 @@
         android:id="@+id/filet"
         android:layout_alignBaseline="@+id/ace"
         android:layout_alignBottom="@+id/ace"
-        android:layout_alignLeft="@+id/btn_map"
-        android:layout_alignStart="@+id/btn_map" />
+        android:layout_toRightOf="@+id/class_t1"
+        android:layout_toEndOf="@+id/class_t1" />
 
     <Button
         android:text="@string/Time_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="9dp"
         android:id="@+id/time_out"
         android:layout_below="@+id/serv"
-        android:layout_alignRight="@+id/serv"
-        android:layout_alignEnd="@+id/serv" />
+        android:layout_alignLeft="@+id/serv"
+        android:layout_alignStart="@+id/serv" />
 
     <Button
         android:text="@string/Ace"
@@ -186,35 +316,57 @@
         android:layout_marginStart="13dp" />
 
     <TextView
-        android:text="@string/New_m"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="cursive"
-        android:textStyle="normal|bold"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="cursive"
+        android:text="@string/New_m"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:text="@string/Local_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_map"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+        android:elevation="0dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="12sp"
+        android:textColor="@android:color/background_light"
+        android:textAlignment="center"
+        android:background="@color/colorPrimary"
+        android:layout_above="@+id/tableLayout2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Spinner
+        android:id="@+id/switch_equipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/filet"
+        android:layout_alignRight="@+id/filet"
+        android:layout_alignTop="@+id/service"
+        android:layout_toRightOf="@+id/serv" />
+
     <Button
-        android:id="@+id/btn_map"
+        android:id="@+id/valider_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:elevation="0dp"
-        android:fontFamily="sans-serif-medium"
-        android:paddingLeft="20px"
-        android:paddingRight="20px"
-        android:text="@string/Local_m"
-        android:textAlignment="center"
+        android:background="@color/colorAccent"
+        android:text="Valider"
         android:textColor="@android:color/background_light"
-        android:textSize="12sp"
-        android:layout_alignTop="@+id/score"
-        android:layout_toRightOf="@+id/ace" />
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/btn_map"
+        android:layout_alignStart="@+id/btn_map" />
+
 
 </RelativeLayout>

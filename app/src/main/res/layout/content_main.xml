@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:text="Équipe :"
+        android:text="@string/Team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
         android:textColor="@color/colorPrimary" />
 
     <TextView
-        android:text="Classement"
+        android:text="@string/Standing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nom_equipe"
@@ -35,7 +35,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:text="Nombre de Match"
+        android:text="@string/Number_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
@@ -46,7 +46,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Prochain Match"
+        android:text="@string/Next_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -57,7 +57,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Score"
+        android:text="@string/Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/score"

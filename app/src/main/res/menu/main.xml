@@ -2,8 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/lang_french"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/French"
+        android:onClick="changeLanguage_fr"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/lang_english"
+        android:orderInCategory="100"
+        android:title="@string/English"
+        android:onClick="changeLanguage_en"
         app:showAsAction="never" />
 </menu>

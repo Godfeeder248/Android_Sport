@@ -11,16 +11,17 @@
     tools:context="com.example.rinaattieh.sports_app_project.Stat">
 
     <TextView
-        android:text="Stat a afficher avec base de donnee"
+        android:id="@+id/nom_equipe_stat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:id="@+id/textView6"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="cursive"
+        android:text="Equipe"
         android:textAlignment="center"
-        android:textSize="18sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp" />
 </RelativeLayout>
