@@ -29,7 +29,6 @@
     <string name="Team">Team :</string>
     <string name="Standing">Standing</string>
     <string name="Number_match">How many matches</string>
-    <string name="Last_match">Last match</string>
     <string name="English">English</string>
     <string name="French">Français</string>
 </resources>
