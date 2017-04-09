@@ -364,9 +364,10 @@
         android:background="@color/colorAccent"
         android:text="Valider"
         android:textColor="@android:color/background_light"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/btn_map"
-        android:layout_alignStart="@+id/btn_map" />
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

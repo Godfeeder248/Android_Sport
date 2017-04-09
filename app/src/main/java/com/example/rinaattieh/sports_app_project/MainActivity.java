@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         locale = new Locale("fr");
         config.locale =locale;
         getResources().updateConfiguration(config, null);
-        startActivity(new Intent(getBaseContext(), MainActivity.class));
+        startActivity(new Intent(getBaseContext(), Go.class));
     }
 
     public void changeLanguage_en(MenuItem item){
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         Configuration config = new Configuration();
         config.locale = Locale.ENGLISH;
         getResources().updateConfiguration(config, null);
-        startActivity(new Intent(getBaseContext(), MainActivity.class));
+        startActivity(new Intent(getBaseContext(), Go.class));
     }
 
     @Override
