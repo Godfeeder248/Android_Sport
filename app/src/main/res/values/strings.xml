@@ -31,4 +31,5 @@
     <string name="Number_match">How many matches</string>
     <string name="English">English</string>
     <string name="French">Français</string>
+    <string name="Put_mark">Put a mark on the location of the match</string>
 </resources>

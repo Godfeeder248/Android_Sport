@@ -29,4 +29,5 @@
     <string name="Team">Équipe :</string>
     <string name="Standing">Classement</string>
     <string name="Number_match">Nombre de matchs</string>
+    <string name="Put_mark">Veuillez localiser le match en déposant un marqeur</string>
 </resources>
